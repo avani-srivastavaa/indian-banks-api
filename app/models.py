@@ -15,3 +15,4 @@ class Branch(db.Model):
     branch = db.Column(db.String)
     address = db.Column(db.String)
     bank_id = db.Column(db.Integer, db.ForeignKey('banks.id'), nullable=False)
+

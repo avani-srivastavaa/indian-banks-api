@@ -1,30 +1,31 @@
-# tests/test_query.py
-
 import json
 import pytest
-
 import sys
 import os
+
+# Ensure app is imported correctly
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from app import create_app
-
 
 @pytest.fixture
 def client():
     app = create_app()
     app.testing = True
-    client = app.test_client()
-    return client
+    return app.test_client()
 
-def test_all_branches(client):
+def test_branches_query(client):
     query = '''
     {
-        allBranches {
-            ifsc
-            branch
-            bank {
-                name
+        branches {
+            edges {
+                node {
+                    ifsc
+                    branch
+                    bank {
+                        name
+                    }
+                }
             }
         }
     }
@@ -32,3 +33,4 @@ def test_all_branches(client):
     response = client.post('/gql', json={'query': query})
     assert response.status_code == 200
     assert 'data' in response.json
+    assert 'branches' in response.json['data']
