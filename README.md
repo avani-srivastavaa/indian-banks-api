@@ -26,15 +26,27 @@ Design a GraphQL API that allows querying bank and branch information using SQL-
 ```
 indian-banks-api/
 ├── app/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── schema.py
-│   └── config.py
+│   ├── __init__.py              # Initializes the Flask app and GraphQL schema
+│   ├── extensions.py            # Database and other extensions
+│   ├── models.py                # SQLAlchemy models (Bank and Branch)
+│   └── schema.py                # GraphQL schema definitions
+│
+├── indian_banks/
+│   ├── bank_branches.csv        # CSV data (optional)
+│   ├── indian_banks.sql         # SQL dump for populating the database
+│   └── README.md                # Source data readme
+│
 ├── tests/
-│   └── test_query.py
-├── run.py
-├── requirements.txt
-└── README.md
+│   └── test_query.py            # Pytest-based GraphQL query test
+│
+├── config.py                    # Database config with Heroku compatibility
+├── run.py                       # Entry point to run the Flask app
+├── requirements.txt             # Project dependencies
+├── .gitignore                   # Files to be ignored by Git
+├── Procfile                     # Heroku process declaration
+├── runtime.txt                  # Python version for Heroku
+└── README.md                    # Project overview (this file)
+
 ```
 
 ---
