@@ -9,7 +9,7 @@ def create_app():
 
     db.init_app(app)
 
-    # ✅ Register the /gql route inside create_app
+
     app.add_url_rule(
         '/gql',
         view_func=GraphQLView.as_view(
