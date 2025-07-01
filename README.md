@@ -1,6 +1,6 @@
 # Indian Banks GraphQL API
 
-A GraphQL API built using Flask, SQLAlchemy, and Graphene for querying bank and branch information in India. This project uses data from [https://github.com/Amanskywalker/indian\_banks](https://github.com/Amanskywalker/indian_banks) and exposes a `/gql` endpoint to perform flexible queries.
+A GraphQL API built using Flask, SQLAlchemy, and Graphene for querying bank and branch information in India. This project uses Indian bank data and exposes a /gql endpoint to perform flexible queries.
 
 ---
 
